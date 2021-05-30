@@ -2,9 +2,7 @@
   = form_with model: @room, class: 'd-flex' do |f|
     .flex-grow-1.me-2
       = f.text_field :name, class: 'form-control'
-    -# 編集ページで更新すると、show のフレームで置き換わってしまうのはどうすればいいの？
     = f.submit '更新する', class: 'btn btn-primary me-2'
-    -# キャンセルボタン、:back で逃げているが、どう書けばいいのかわからない -> Turbo Streams で上手く書けるかも？
     = link_to 'キャンセル', :back, class: 'btn btn-outline-secondary', data: { turbo_frame: :_top }
 
 = button_to 'ルームを削除する', room_path(@room), method: :delete,
