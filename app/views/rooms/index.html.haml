@@ -1,0 +1,9 @@
+.d-flex
+  %h1 ルーム一覧
+  = link_to 'ルーム作成', new_room_path, class: 'btn btn-outline-primary ms-auto'
+
+.mt-3
+  - @rooms.each do |room|
+    .d-flex.mt-2.pt-2.border-top.align-items-center
+      = link_to room.name, room
+      = link_to '編集', edit_room_path(room), class: 'btn btn-outline-primary ms-auto'

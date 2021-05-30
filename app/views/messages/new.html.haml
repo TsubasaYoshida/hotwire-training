@@ -1,0 +1,7 @@
+%h1 メッセージ作成
+
+= turbo_frame_tag 'new_message', target: :_top do
+  = form_with model: [@room, @message] do |f|
+    = f.text_area :content, rows: 4, class: 'form-control'
+    .text-end.mt-2
+      = f.submit '作成する', class: 'btn btn-primary'

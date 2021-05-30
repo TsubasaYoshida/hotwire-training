@@ -1,0 +1,6 @@
+%h1 ルーム作成
+
+= form_with model: @room, class: 'd-flex mt-3' do |f|
+  .flex-grow-1.me-2
+    = f.text_field :name, class: 'form-control'
+  = f.submit '作成する', class: 'btn btn-primary'

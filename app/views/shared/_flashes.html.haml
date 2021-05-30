@@ -1,0 +1,3 @@
+- flash.each do |type, msg|
+  %div{ class: "alert alert-#{bootstrap_alert(type)} mt-2 mb-4", role: 'alert' }
+    = msg

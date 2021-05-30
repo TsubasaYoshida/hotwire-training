@@ -1,0 +1,13 @@
+= turbo_frame_tag 'edit_room' do
+  .d-flex
+    %h1.rooms-index-title.mb-0= @room.name
+    .ms-auto
+      = link_to '編集', edit_room_path(@room), class: 'btn btn-outline-primary'
+      -# わざわざここにルーム一覧ボタンを置く意味はないが、今回は data: { turbo_frame: :_top } の動きを確認するために置く
+      = link_to 'ルーム一覧', rooms_path, class: 'btn btn-outline-secondary', data: { turbo_frame: :_top }
+
+.mt-3
+  = turbo_frame_tag 'new_message', src: new_room_message_path(@room), target: :_top
+
+#messages.mt-3
+  = render @room.messages.recently_posted_order

@@ -9,7 +9,10 @@
     %meta{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }/
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }/
     %meta{ 'http-equiv': 'content-language', content: 'ja' }/
-  = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-  = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  = stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload'
+  = javascript_pack_tag 'application', 'data-turbo-track': 'reload'
   %body
-    = yield
+    = render 'shared/header'
+    .container.mb-5.mt-2
+      = render 'shared/flashes'
+      = yield
