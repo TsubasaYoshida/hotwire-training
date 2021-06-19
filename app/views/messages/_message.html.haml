@@ -1,0 +1,3 @@
+.mt-3{ id: "#{dom_id message}" }
+  %div= l(message.created_at, format: :short)
+  = simple_format(message.content)
