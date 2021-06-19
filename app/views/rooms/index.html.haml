@@ -7,3 +7,21 @@
     .d-flex.mt-2.pt-2.border-top.align-items-center
       = link_to room.name, room
       = link_to '編集', edit_room_path(room), class: 'btn btn-outline-primary ms-auto'
+
+.mt-3{ data: { controller: 'hello' }}
+  .d-flex
+    %input.form-control.w-auto{ type: :text, data: { 'hello-target': 'name' } }
+    %button.btn.btn-secondary.ms-2{ data: { action: 'click->hello#greet' }} Greet
+
+.mt-3{ data: { controller: 'clipboard' }}
+  .d-flex
+    %input.form-control.w-auto{ type: :text, value: '123456', readonly: true, data: { 'clipboard-target': 'source' } }
+    %button.btn.btn-secondary.ms-2{ data: { action: 'clipboard#copy' }} Copy
+
+.mt-3{ data: { controller: 'slideshow', 'slideshow-index-value': 1 }}
+  %button.btn.btn-secondary{ data: { action: 'slideshow#previous' }} Previous
+  %button.btn.btn-secondary{ data: { action: 'slideshow#next' }} Next
+  .mt-3
+    .border.p-5{ data: { 'slideshow-target': 'slide' }} 1枚目のスライド
+    .border.p-5{ data: { 'slideshow-target': 'slide' }} 2枚目のスライド
+    .border.p-5{ data: { 'slideshow-target': 'slide' }} 3枚目のスライド
